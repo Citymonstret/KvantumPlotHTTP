@@ -1,0 +1,48 @@
+plugins {
+    id "io.freefair.lombok" version "3.1.4"
+    id 'com.github.johnrengelman.shadow' version '5.0.0'
+    id 'java'
+}
+
+group 'org.incendo'
+version '1.0-SNAPSHOT'
+
+//noinspection GroovyUnusedAssignment
+sourceCompatibility = 1.10
+//noinspection GroovyUnusedAssignment
+targetCompatibility = 1.10
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+    maven { url = "https://oss.sonatype.org/content/repositories/snapshots/"}
+    maven {url "http://nexus.hc.to/content/repositories/pub_releases"}
+    maven { url = "https://repo.codemc.org/repository/maven-public" }
+    maven {url "https://ci.athion.net/job/FastAsyncWorldEdit-Breaking/ws/mvn/" }
+    maven {url "https://ci.athion.net/job/PlotSquared-Breaking/ws/mvn/"}
+    maven {url "http://ci.emc.gs/nexus/content/groups/aikar/" }
+    maven {url "https://hub.spigotmc.org/nexus/content/groups/public/"}
+    maven {url "http://repo.mcstats.org/content/repositories/public"}
+    maven {url "http://maven.sk89q.com/repo/"}
+    maven {url "http://repo.maven.apache.org/maven2"}
+    maven {url "http://ci.athion.net/job/PlotSquared/ws/mvn/"}
+    maven {url "http://ci.athion.net/job/FastAsyncWorldEdit/ws/mvn/"}
+    maven {url "http://ci.regularbox.com/plugin/repository/everything/"}
+    maven {url "http://maven.sk89q.com/artifactory/repo/"}
+    maven {url "http://maven.sk89q.com/repo/"}
+    maven {url "http://empcraft.com/maven2"}
+    maven { url 'https://jitpack.io' }
+    maven {url "https://repo.spongepowered.org/maven"}
+}
+
+dependencies {
+    compile name: 'Implementation-all'
+    compile 'org.spongepowered:spongeapi:6.0.0-SNAPSHOT'
+    compile 'org.ajoberstar:grgit:1.7.0'
+    compile 'org.spigotmc:spigot-api:1.12.1-R0.1-SNAPSHOT'
+    compile 'com.boydti:fawe-api:latest'
+    compile 'com.boydti:fawe-bukkit:latest'
+    compile 'com.github.intellectualsites.plotsquared:PlotSquared-API:latest'
+}
